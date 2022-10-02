@@ -1,0 +1,3 @@
+# _layouts
+
+These are specific parts of the site that have a particular layout applied to them. These files shouldn't contain any of the actual layout Sass - that's in _layout-generics. They should only have files that bind those generic structures to a particular selector.

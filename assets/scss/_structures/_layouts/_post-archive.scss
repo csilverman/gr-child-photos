@@ -1,0 +1,9 @@
+.home {
+
+  .display-posts-listing {
+    @extend %grid-container;
+
+    gap: 4rem;
+  }
+
+}

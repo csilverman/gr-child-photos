@@ -1,0 +1,44 @@
+
+/*  BASE
+    ==== */
+
+a {
+  @include linkColors(
+    var(--link-color, var(--color-blue)),
+    var(--link-color-visited, var(--color-blue)),
+    var(--link-color-hover, var(--color-crimson)),
+    var(--link-color-active, var(--color-crimson))
+  );
+  transition: 0.2s all ease;
+}
+
+
+/*  CONTENT
+    ======= */
+
+.entry-content {
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-color-underline, var(--color-light-blue));
+
+    &:hover,
+    &:focus {
+      border-color: transparent;
+    }
+  }
+}
+
+
+/*  NAV
+    === */
+
+.primary-menu {
+  a {
+    @include linkColors(
+      #333,
+      #666,
+      #f0a,
+      #f0a
+    )
+  }
+}

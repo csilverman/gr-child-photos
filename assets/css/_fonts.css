@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Atacama";
+  src: url("../fonts/AtacamaItalic-XCnBdContrast.woff2") format("woff2"), url("../fonts/AtacamaItalic-XCnBdContrast.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Basalte Multicolor";
+  src: url("../fonts/Basalte-Multicolor.woff2") format("woff2"), url("../fonts/Basalte-Multicolor.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atacama";
+  src: url("../fonts/Atacama-ExtraCondBoldContrast.woff2") format("woff2"), url("../fonts/Atacama-ExtraCondBoldContrast.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Basalte Fond";
+  src: url("../fonts/Basalte-Fond.woff2") format("woff2"), url("../fonts/Basalte-Fond.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atacama";
+  src: url("../fonts/Atacama-Regular.woff2") format("woff2"), url("../fonts/Atacama-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atacama";
+  src: url("../fonts/AtacamaItalic-Regular.woff2") format("woff2"), url("../fonts/AtacamaItalic-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Crystal VAR";
+  src: url("../fonts/CrystalVAR-Regular.woff2") format("woff2"), url("../fonts/CrystalVAR-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*# sourceMappingURL=_fonts.css.map */

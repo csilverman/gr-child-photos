@@ -1,0 +1,65 @@
+body {
+  padding: var(--template-padding, 16%);
+  padding-bottom: 0;
+}
+.site-description {
+  display: none;
+}
+.site-title {
+  a {
+    font-family: "LabMono-Regular";
+    @include font-size(3rem);
+    text-decoration: none;
+
+    &:link,
+    &:visited {
+      color: var(--masthead-link-color);
+
+      &:hover,
+      &:focus {
+        color: #222;
+        background: var(--masthead-link-color);
+      }
+    }
+  }
+}
+
+.primary-menu {
+//  position: absolute;
+//  top: 0.8rem;
+//  right: var(--template-padding);
+
+  ul {
+    margin: 0;
+  }
+}
+.widget-area--secondary {
+  padding-bottom: 6rem;
+}
+.site-title {
+  width: 50%;
+
+  a {
+    line-height: 1.2;
+    color: #fff;
+    // display: inline-block;
+    font-family: 'LabMono-Regular';
+    @include font-size(1.4rem);
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+
+    &:hover {
+      background: #fff;
+      color: #111;
+    }
+  }
+}
+
+nav#site-navigation {
+  position: fixed;
+
+  @include rfs(4rem, 'left');
+  @include rfs(4rem, 'bottom');
+
+  width: 20rem;
+}

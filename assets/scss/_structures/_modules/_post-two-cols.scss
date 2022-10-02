@@ -1,0 +1,15 @@
+.post-two-cols {
+  @include break(medium) {
+    .entry-footer {
+      clear: both;
+    }
+    .post-thumbnail {
+      width: 50%;
+      display: block;
+      float: left;
+      margin-right: 3rem;
+      margin-bottom: 2rem;
+      margin-left: -10%;
+    }
+  }
+}

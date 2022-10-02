@@ -1,0 +1,669 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Atacama";
+  src: url("../fonts/AtacamaItalic-XCnBdContrast.woff2") format("woff2"), url("../fonts/AtacamaItalic-XCnBdContrast.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Basalte Multicolor";
+  src: url("../fonts/Basalte-Multicolor.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atacama";
+  src: url("../fonts/Atacama-ExtraCondBoldContrast.woff2") format("woff2"), url("../fonts/Atacama-ExtraCondBoldContrast.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Basalte Fond";
+  src: url("../fonts/Basalte-Fond.woff2") format("woff2"), url("../fonts/Basalte-Fond.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atacama";
+  src: url("../fonts/Atacama-Regular.woff2") format("woff2"), url("../fonts/Atacama-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atacama";
+  src: url("../fonts/AtacamaItalic-Regular.woff2") format("woff2"), url("../fonts/AtacamaItalic-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Crystal VAR";
+  src: url("../fonts/CrystalVAR-Regular.woff2") format("woff2"), url("../fonts/CrystalVAR-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --typeface-sans-serif: "Crystal VAR";
+  --typeface-serif: "Atacama";
+  --template-padding: min(6vw, 2rem);
+  --color-light-blue: #00abff;
+  --color-blue: #06c;
+  --color-crimson: #ff0062;
+  --color-mid-gray: #567;
+  --masthead-link-color: #d2e4da;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*	UTILITIES
+	=========
+
+	These provide useful functions for writing your own mixins, as well as mixins for automating certain processes (generating responsive CSS from a map, for example). They're also used by mixins in Beltpack itself, so they should come first.
+*/
+/*
+	As far as I can tell, there doesn't seem to be a function to get a key-value pair from a map based on index number. This might be clumsy, but it works: iterate across the map, incrementing a counter, until the counter matches the specified index, at which point you return the value.
+
+*/
+/*	FUNCTIONS
+	========= */
+/*	The following are by Hugo Giraudel
+*/
+/*	MIXINS
+	====== */
+/*	AESTHETIC
+	=========
+
+	These mixins handle aesthetic effects.
+*/
+/*	Animations
+	========== */
+/*	Utilities
+	---------
+	Couple of tools for applying animations.
+
+*/
+/*	Columns
+	======= */
+/*
+	STRUCTURE
+	=========
+
+	This contains mixins that might be useful for layout stuff.
+*/
+.breakout, .post-navigation {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw !important;
+  transform: translateX(calc(50vw - 50%));
+  max-width: 100vw;
+  /*		width: 100vw;
+  		position: relative;
+  		left: 50%;
+  		right: 50%;
+  		margin-left: -50vw;
+  		margin-right: -50vw;
+  		max-width: none;	*/
+}
+
+/*
+
+	NOTE
+	Compiling this file will throw an error, even though compiling files
+	that refer to it will not throw errors.
+
+	Still looking into this, but it's fine.	
+
+	THIS SHOULD BE BUILT ON TOP OF BELTPACK. This includes a break() mixin without
+	the second parameter, and that's blocking the more advanced break() mixin in Beltpack.
+	Go through this and remove everything that's already in Beltpack.
+
+*/
+/* ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: overlay;
+}
+
+body {
+  margin: 0 0px;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+/*
+
+*/
+/*  BASICS
+    ====== */
+.page-title,
+h2 {
+  font-family: var(--typeface-serif);
+  font-size: calc(1.525rem + 3.3vw);
+  text-align: center;
+  letter-spacing: -0.04em;
+  font-variation-settings: "wdth" 70, "CNTR" 80, "wght" 600;
+}
+@media (min-width: 1200px) {
+  .page-title,
+h2 {
+    font-size: 4rem;
+  }
+}
+
+em, i {
+  font-family: "Atacama Italic VAR", Georgia, serif;
+}
+
+p {
+  margin-top: 0;
+}
+
+.site-main p {
+  font-size: calc(1.259rem + 0.108vw);
+  line-height: 1.4;
+  font-family: CutiveMono-Regular;
+  letter-spacing: -0.12rem;
+  -webkit-text-stroke: 0.4px;
+}
+@media (min-width: 1200px) {
+  .site-main p {
+    font-size: 1.34rem;
+  }
+}
+
+/*  SPECIFIC
+    ======== */
+.has-drop-cap:not(:focus):first-letter {
+  float: left;
+  font-size: 8em;
+  line-height: 1;
+  font-weight: 100;
+  margin: 0 0.2em 0 0;
+  text-transform: uppercase;
+  font-style: normal;
+  font-family: Crystal VAR;
+  font-variation-settings: "wght" 700;
+  color: var(--color-crimson);
+}
+
+.small-caps,
+kbd {
+  font-family: var(--typeface-serif);
+  font-variant: all-small-caps;
+  letter-spacing: 0.1em;
+  font-variation-settings: "wght" 600;
+}
+
+/*  Archive pages
+    ------------- */
+.archive .page-title {
+  font-family: var(--typeface-sans-serif);
+  font-variation-settings: "wdth" 100, "CNTR" 80, "wght" 600;
+  font-size: 2rem;
+  letter-spacing: normal;
+  margin-bottom: 9rem;
+  margin-top: 4rem;
+}
+
+/*  BASE
+    ==== */
+a {
+  transition: 0.2s all ease;
+}
+a:link {
+  color: var(--link-color, var(--color-blue));
+  background: transparent;
+}
+a:visited {
+  color: var(--link-color-visited, var(--color-blue));
+  background: transparent;
+}
+a:hover, a:visited:hover, a:focus {
+  color: var(--link-color-hover, var(--color-crimson));
+  background: transparent;
+}
+a:active, a:visited:active {
+  color: var(--link-color-active, var(--color-crimson));
+  background: transparent;
+}
+
+/*  CONTENT
+    ======= */
+.entry-content a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--link-color-underline, var(--color-light-blue));
+}
+.entry-content a:hover, .entry-content a:focus {
+  border-color: transparent;
+}
+
+/*  NAV
+    === */
+.primary-menu a:link {
+  color: #333;
+  background: transparent;
+}
+.primary-menu a:visited {
+  color: #666;
+  background: transparent;
+}
+.primary-menu a:hover, .primary-menu a:visited:hover, .primary-menu a:focus {
+  color: #f0a;
+  background: transparent;
+}
+.primary-menu a:active, .primary-menu a:visited:active {
+  color: #f0a;
+  background: transparent;
+}
+
+body:not(.home) {
+  position: relative;
+}
+body:not(.home):before {
+  position: absolute;
+  top: 0;
+  height: 0.6rem;
+  left: 0;
+  width: 100%;
+  background: repeating-linear-gradient(45deg, var(--stripe-color, var(--color-crimson)), var(--stripe-color, var(--color-crimson)) var(--stripe-size, 6px), transparent var(--stripe-size, 6px), transparent var(--stripe-gap, 12px));
+}
+
+.home.blog {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 55em) {
+  .home.blog {
+    border: 3px double #333;
+    border: 3px double var(--color-crimson);
+    margin: 2vw;
+  }
+}
+
+.posted-on a:link, .posted-on a:visited {
+  text-decoration: none;
+  color: #70a2a6;
+}
+.posted-on a:link:hover, .posted-on a:link:focus, .posted-on a:visited:hover, .posted-on a:visited:focus {
+  color: #fff;
+}
+
+.wp-block-separator {
+  margin: 4rem 30%;
+  border: none;
+  border-top: 1px dashed #000;
+}
+
+header.entry-header {
+  display: flex;
+  margin-bottom: 2rem;
+}
+header.entry-header > * {
+  font-family: LabMono-Regular;
+  font-size: 1rem;
+  text-align: left;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h2.entry-title {
+  display: none;
+}
+
+body {
+  background: #0e0e0f;
+}
+
+.posted-on a:link,
+.posted-on a:visited {
+  color: #62e293;
+  text-decoration: none;
+}
+
+header#masthead {
+  left: calc(1.525rem + 3.3vw);
+  top: calc(1.525rem + 3.3vw);
+  position: fixed;
+}
+@media (min-width: 1200px) {
+  header#masthead {
+    left: 4rem;
+  }
+}
+@media (min-width: 1200px) {
+  header#masthead {
+    top: 4rem;
+  }
+}
+
+.display-posts-listing h2.entry-title {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.widget-area--secondary .wp-block-social-links {
+  justify-content: center;
+}
+
+.primary-menu ul {
+  padding: 0;
+}
+.primary-menu li {
+  list-style: none;
+}
+.primary-menu a {
+  font-family: "LabMono-Regular";
+}
+
+.menu-toggle {
+  display: none;
+}
+
+article.post .entry-header {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+article.post:not(.post-has-more) .entry-content p:last-of-type:after {
+  content: "❦";
+  margin-left: 0.4em;
+  color: var(--color-crimson);
+}
+article.post .post-thumbnail {
+  display: block;
+  margin-bottom: 2rem;
+}
+article.post .entry-title {
+  margin-top: 0;
+  padding: 0 1em;
+}
+article.post .entry-footer {
+  margin-top: 4rem;
+}
+article.post .posted-on {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed #98c8cc;
+}
+article.post .edit-link {
+  float: right;
+}
+article.post .more-link {
+  font-size: 1.3rem;
+  margin: 2rem auto;
+  display: inline-block;
+}
+article.post .more-link:link, article.post .more-link:visited {
+  text-decoration: none;
+  color: var(--color-crimson);
+  border: none;
+}
+article.post .more-link:link:hover, article.post .more-link:link:focus, article.post .more-link:visited:hover, article.post .more-link:visited:focus {
+  color: #000;
+}
+article.post .tags-links ul {
+  padding: 0;
+}
+article.post .tags-links ul li {
+  list-style: none;
+  display: inline;
+}
+article.post .tags-links ul a {
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  margin-right: 0.6rem;
+  text-decoration: none;
+  color: #444;
+  font-size: 0.9rem;
+}
+article.post .tags-links ul a:link, article.post .tags-links ul a:visited {
+  text-decoration: none;
+  color: #444;
+  background: #ff8;
+}
+article.post .tags-links ul a:link:hover, article.post .tags-links ul a:link:focus, article.post .tags-links ul a:visited:hover, article.post .tags-links ul a:visited:focus {
+  color: #ff8;
+  background: #444;
+}
+
+.single article.post .post-thumbnail {
+  margin-bottom: 6rem;
+}
+.single article.post .posted-on {
+  margin-bottom: 6rem;
+}
+
+.site-main {
+  margin-top: 20vh;
+}
+
+.post-two-cols {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 55em) {
+  .post-two-cols .entry-footer {
+    clear: both;
+  }
+  .post-two-cols .post-thumbnail {
+    width: 50%;
+    display: block;
+    float: left;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+    margin-left: -10%;
+  }
+}
+
+span.nav-title {
+  display: block;
+  font-size: 2rem;
+}
+
+.nav-links {
+  background: #fff65f;
+  margin: 4rem 0;
+  padding: 3rem;
+  width: 100%;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 55em) {
+  .nav-links {
+    display: flex;
+  }
+}
+.nav-links a {
+  text-decoration: none;
+  max-width: 40ch;
+  display: block;
+}
+.nav-links a:link, .nav-links a:visited {
+  color: #444;
+}
+.nav-links > * {
+  width: 100%;
+}
+.nav-links .nav-next {
+  text-align: right;
+}
+.nav-links .nav-next a {
+  float: right;
+}
+
+.home .display-posts-listing {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 70em) {
+  .home .display-posts-listing {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.home .display-posts-listing {
+  gap: 4rem;
+}
+
+body {
+  padding: var(--template-padding, 16%);
+  padding-bottom: 0;
+}
+
+.site-description {
+  display: none;
+}
+
+.site-title a {
+  font-family: "LabMono-Regular";
+  font-size: calc(1.425rem + 2.1vw);
+  text-decoration: none;
+}
+@media (min-width: 1200px) {
+  .site-title a {
+    font-size: 3rem;
+  }
+}
+.site-title a:link, .site-title a:visited {
+  color: var(--masthead-link-color);
+}
+.site-title a:link:hover, .site-title a:link:focus, .site-title a:visited:hover, .site-title a:visited:focus {
+  color: #222;
+  background: var(--masthead-link-color);
+}
+
+.primary-menu ul {
+  margin: 0;
+}
+
+.widget-area--secondary {
+  padding-bottom: 6rem;
+}
+
+.site-title {
+  width: 50%;
+}
+.site-title a {
+  line-height: 1.2;
+  color: #fff;
+  font-family: "LabMono-Regular";
+  font-size: calc(1.265rem + 0.18vw);
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+}
+@media (min-width: 1200px) {
+  .site-title a {
+    font-size: 1.4rem;
+  }
+}
+.site-title a:hover {
+  background: #fff;
+  color: #111;
+}
+
+nav#site-navigation {
+  position: fixed;
+  left: calc(1.525rem + 3.3vw);
+  bottom: calc(1.525rem + 3.3vw);
+  width: 20rem;
+}
+@media (min-width: 1200px) {
+  nav#site-navigation {
+    left: 4rem;
+  }
+}
+@media (min-width: 1200px) {
+  nav#site-navigation {
+    bottom: 4rem;
+  }
+}
+
+.site-main article {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16rem;
+}
+
+.page-id-2 {
+  --link-color: #222;
+  --link-color-visited: #222;
+  --link-color-hover: #f00;
+  --link-color-hover: #f00;
+  --link-color-underline: #222;
+  --masthead-link-color: #da0054;
+  background: #f1f2e8;
+}
+.page-id-2 .entry-title {
+  font-weight: bold;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+.page-id-2 .entry-title {
+  color: #225b9d;
+  color: #000;
+}
+
+.post-type-archive-photos article,
+.single-photos article {
+  max-width: 38rem;
+}
+.post-type-archive-photos .page-header,
+.single-photos .page-header {
+  display: none;
+}
+.post-type-archive-photos .site-main,
+.single-photos .site-main {
+  margin-left: 16vw;
+}
+
+/*# sourceMappingURL=site.css.map */

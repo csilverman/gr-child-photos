@@ -1,0 +1,7 @@
+# _layout-generics
+
+This folder contains generic structures that can be applied to specific markup via @extend.
+
+Example: A responsive 3-col grid. This could be applied to an archive page, or the front page of a blog, etc, simply by @extending it to target those selectors.
+
+All Sass in this folder must target generic % selectors.

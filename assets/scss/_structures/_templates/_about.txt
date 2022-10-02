@@ -1,0 +1,3 @@
+# Templates
+
+This directory contains the templates for specific kinds of pages: homepage, basic inner page, etc. If a specific page - say, About - needs some kind of custom styling, that would go in the "_pages" directory.

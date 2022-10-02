@@ -1,0 +1,41 @@
+.post-navigation {
+  @extend .breakout;
+}
+span.nav-title {
+    display: block;
+    font-size: 2rem;
+}
+
+.nav-links {
+  background: rgb(255 246 95);
+  margin: 4rem 0;
+  padding: 3rem;
+  width: 100%;
+
+  @include break(medium) {
+    display: flex;
+  }
+
+  a {
+    text-decoration: none;
+    max-width: 40ch;
+    display: block;
+
+    &:link,
+    &:visited {
+      color: #444;
+    }
+  }
+
+  & > * {
+    width: 100%;
+  }
+
+  .nav-next {
+    text-align: right;
+
+    a {
+      float: right;
+    }
+  }
+}

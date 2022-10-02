@@ -1,0 +1,90 @@
+.home {
+  h1.site-title a {
+    @include fancy-title();
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+
+    &:link,
+    &:visited {
+      color: var(--home-masthead-link-color, var(--color-crimson));
+    }
+  }
+
+  .site-description {
+    color: var(--color-crimson);
+    display: block;
+    font-family: "Atacama Italic VAR";
+    margin-bottom: 6rem;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 3rem;
+    text-align: center;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      width: 6vw;
+      height: 1px;
+      position: absolute;
+      border-top: 1px solid;
+      top: 0.5rem;
+    }
+
+    &:before {
+      right: calc(100% + 1rem);
+    }
+    &:after {
+      left: calc(100% + 1rem);
+    }
+  }
+
+  .primary-menu {
+    right: calc(50% - 6rem);
+    background: #fff;
+    padding: 0.4rem 2rem;
+
+    a {
+      font-size: 1.1rem;
+      text-decoration: none;
+      font-variation-settings: "wght" 400, "wdth" 100;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      font-family: atacama VAR;
+    }
+  }
+}
+
+
+
+
+
+
+.entry-title a {
+  @include linkColors(
+    var(--link-post-title-color, #333),
+    var(--link-post-title-color-visited, #333),
+    var(--link-post-title-color-hover, var(--color-crimson)),
+    var(--link-post-title-color-active, var(--color-crimson))
+  );
+
+  text-decoration: none;
+  max-width: 60rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.home .entry-title {
+  @extend .breakout;
+}
+
+body:not(.single) {
+  article {
+    margin-bottom: 12rem;
+    padding-bottom: 1rem;
+    position: relative;
+  }
+}

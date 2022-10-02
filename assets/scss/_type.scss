@@ -1,0 +1,95 @@
+/*
+
+*/
+
+@mixin standard-content-type() {
+  @include font-size(1.34rem);
+  line-height: 1.4;
+  font-family: CutiveMono-Regular;
+  letter-spacing: -0.12rem;
+  -webkit-text-stroke: 0.4px;
+}
+
+/*  BASICS
+    ====== */
+
+html {
+//  font-family: var(--typeface-sans-serif);
+}
+
+.page-title,
+h2 {
+  font-family: var(--typeface-serif);
+  @include font-size(4rem);
+  text-align: center;
+  letter-spacing: -0.04em;
+  font-variation-settings: "wdth" 70, "CNTR" 80, "wght" 600;
+}
+
+em, i {
+  font-family: "Atacama Italic VAR", Georgia, serif;
+}
+
+p {
+  margin-top: 0;
+}
+
+
+.site-main {
+  p {
+    @include standard-content-type();
+  }
+}
+
+
+
+
+/*  SPECIFIC
+    ======== */
+
+@mixin fancy-title() {
+  @include font-size(6rem);
+
+  font-family: "Basalte Fond";
+
+  @include break(medium) {
+    font-family: "Basalte Multicolor", "Basalte Fond";
+  }
+}
+
+.has-drop-cap:not(:focus):first-letter {
+  float: left;
+  font-size: 8em;
+  line-height: 1;
+  font-weight: 100;
+  margin: 0 0.2em 0 0;
+  text-transform: uppercase;
+  font-style: normal;
+  font-family: Crystal VAR;
+  font-variation-settings: "wght" 700;
+  color: var(--color-crimson);
+}
+
+.small-caps,
+kbd {
+  font-family: var(--typeface-serif);
+  font-variant: all-small-caps;
+  letter-spacing: 0.1em;
+  font-variation-settings: "wght" 600;
+}
+
+
+
+/*  Archive pages
+    ------------- */
+
+.archive {
+  .page-title {
+    font-family: var(--typeface-sans-serif);
+    font-variation-settings: "wdth" 100, "CNTR" 80, "wght" 600;
+    font-size: 2rem;
+    letter-spacing: normal;
+    margin-bottom: 9rem;
+    margin-top: 4rem;
+  }
+}

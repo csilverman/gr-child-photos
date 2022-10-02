@@ -1,0 +1,15 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html {
+    overflow-y: overlay;
+}
+
+body {
+  margin: 0 0px;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}

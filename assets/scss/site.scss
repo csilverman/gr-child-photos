@@ -1,0 +1,35 @@
+// cfg
+
+@import "_fonts";
+
+:root {
+	--typeface-sans-serif: "Crystal VAR";
+	--typeface-serif: "Atacama";
+
+	--template-padding: min(6vw, 2rem);
+
+	--color-light-blue: #00abff;
+	--color-blue: #06c;
+	--color-crimson: #ff0062;
+	--color-mid-gray: #567;
+
+	--masthead-link-color: #d2e4da;
+}
+
+$breakpoints: (
+	"small": 40em,
+	"medium": 55em,
+	"large": 70em
+);
+
+
+// imports
+
+@import "~rfs";
+@import "~beltpack";
+
+@import "_basics";
+@import "_type";
+@import "_links";
+@import "_theme";
+@import "_structures/_all";

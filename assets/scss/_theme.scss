@@ -1,0 +1,84 @@
+body:not(.home) {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    height: 0.6rem;
+    left: 0;
+    width: 100%;
+    background: repeating-linear-gradient(
+      45deg,
+      var(--stripe-color, var(--color-crimson)),
+      var(--stripe-color, var(--color-crimson)) var(--stripe-size, 6px),
+      transparent var(--stripe-size, 6px),
+      transparent var(--stripe-gap, 12px)
+    );
+  }
+}
+
+.home.blog {
+  @include break(medium) {
+    border: 3px double #333;
+    border: 3px double var(--color-crimson);
+    margin: 2vw;
+  }
+}
+
+.posted-on {
+  a {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: #70a2a6;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+.wp-block-separator {
+  margin: 4rem 30%;
+  border: none;
+  border-top: 1px dashed #000;
+}
+
+header.entry-header {
+  display: flex;
+  margin-bottom: 2rem;
+
+  & > * {
+    font-family: LabMono-Regular;
+//    font-family: BrutalitaCustomMono400;
+    font-size: 1rem;
+    text-align: left;
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+h2.entry-title {
+  display: none;
+}
+
+body {
+  background: #0e0e0f;
+}
+
+.posted-on {
+  a:link,
+  a:visited {
+    color: #62e293;
+    text-decoration: none;
+  }
+}
+
+header#masthead {
+  @include rfs(4rem, 'left');
+  @include rfs(4rem, 'top');
+  position: fixed;
+}

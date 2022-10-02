@@ -1,0 +1,9 @@
+%grid-container {
+  @include break(large) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+//  & > * {
+
+//  }
+}
